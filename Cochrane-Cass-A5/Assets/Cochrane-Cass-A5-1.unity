@@ -492,7 +492,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2c109cb28e13d044a2b118a9ca53f84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterRb: {fileID: 0}
+  characterRb: {fileID: 1916498623}
   speed: 8
 --- !u!50 &1916498623
 Rigidbody2D:
@@ -662,10 +662,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca2a9f711cd1c3e4a96866acf99700af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  platformPrefab: {fileID: 6135642204767434605, guid: f0a50d50095edfb4bb263ca967757722, type: 3}
+  platformPrefab: {fileID: 212878757}
   platformCount: 16
   spawnPosition: {x: 0, y: 0, z: 0}
-  characterLocation: {fileID: 0}
+  characterLocation: {fileID: 1916498620}
 --- !u!4 &1997374388
 Transform:
   m_ObjectHideFlags: 0

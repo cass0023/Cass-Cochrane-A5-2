@@ -4,34 +4,36 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject platformPrefab;
-    public float platformCount;
-    public Vector3 spawnPosition;
-    private float levelCheck;
-    private float platformsPerLevel;
     public GameObject characterLocation;
+    public GameObject platformPrefab;
+    public int platformsPerLevel = 20;
+    //
+    private int level = 2;
+    private float lastPlatformHeight = 0;
+    private float lastPlayerHeight = -20;
 
     // Start is called before the first frame update
     void Start()
     {
-        Vector3 spawnPosition = new Vector3();
-        for (float i = 0; i < platformCount; i++)
-        {
-            Screen.SetResolution(600, 800, true);
 
-            levelCheck = -platformsPerLevel / 2;
-        }
     }
 
     void Update()
     {
-        //creates platforms into levels, starting with 2 units per platform
-        if (characterLocation.transform.position.y > levelCheck)
-
+        if (characterLocation.transform.position.y > lastPlayerHeight)
         {
-            spawnPosition.y = Random.Range(-15f, 100f);
-            spawnPosition.x = Random.Range(-12f, 12f);
-            Instantiate(platformPrefab, spawnPosition, Quaternion.identity);
+            for (int i = 0; i < platformsPerLevel; i++)
+            {
+                Vector3 spawnPosition = new Vector3();
+                spawnPosition.x = Random.Range(-12f, 12f);
+                spawnPosition.y = lastPlatformHeight + (i * level);
+                Instantiate(platformPrefab, spawnPosition, Quaternion.identity);
+            }
+            lastPlayerHeight += platformsPerLevel * level;
+            lastPlatformHeight += platformsPerLevel * level;
+            level++;
         }
+
+
     }
 }
