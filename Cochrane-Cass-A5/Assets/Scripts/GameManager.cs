@@ -7,8 +7,7 @@ public class GameManager : MonoBehaviour
     public GameObject characterLocation;
     public GameObject platformPrefab;
     public int platformsPerLevel = 20;
-    //
-    private int level = 2;
+    private int level = 4;
     private float lastPlatformHeight = 0;
     private float lastPlayerHeight = -20;
 
